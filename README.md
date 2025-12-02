@@ -43,7 +43,7 @@ File Location (Linux):
 nvs,      data, nvs,     0x9000,  0x5000,  
 otadata,  data, ota,     0xe000,  0x2000,  
 app0,     app,  ota\_0,   0x10000, 0x300000,  
-spiffs,   data, spiffs,  0x310000,0x300000,```
+spiffs,   data, spiffs,  0x310000,0x300000, ```
 
 *Sets SPIFFS size to 3MB (0x300000).*
 
@@ -51,7 +51,7 @@ spiffs,   data, spiffs,  0x310000,0x300000,```
 
 The source video must be processed to reduce noise, center the image, and handle transparency specifically for the ESP32 buffer logic.  
 **Command:**  
-ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hqdn3d=4:4:6:6,eq=contrast=1.3:brightness=-0.08,fps=20,scale=120:120:flags=lanczos,split\[s0\]\[s1\];\[s0\]palettegen=reserve\_transparent=0\[p\];\[s1\]\[p\]paletteuse=dither=bayer:bayer\_scale=5" \-loop 0 eye.gif
+```ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hqdn3d=4:4:6:6,eq=contrast=1.3:brightness=-0.08,fps=20,scale=120:120:flags=lanczos,split\[s0\]\[s1\];\[s0\]palettegen=reserve\_transparent=0\[p\];\[s1\]\[p\]paletteuse=dither=bayer:bayer\_scale=5" \-loop 0 eye.gif ```
 
 * **Crop:** Centers the square.  
 * **Resolution:** 120x120 (Centered via code offset).  
@@ -81,7 +81,7 @@ ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hq
    * Hold **BOOT**, Click **RST**, Release **BOOT**.  
 5. Run this command in Terminal (using 115200 baud for safety):
 
-python3 \-m esptool \--chip esp32s3 \--port /dev/ttyACM0 \--baud 115200 write\_flash 0x310000 /tmp/arduino\_build\_YOUR\_BUILD\_ID/sauron-eye-lotr-pinball.spiffs.bin
+```python3 \-m esptool \--chip esp32s3 \--port /dev/ttyACM0 \--baud 115200 write\_flash 0x310000 /tmp/arduino\_build\_YOUR\_BUILD\_ID/sauron-eye-lotr-pinball.spiffs.bin ```
 
 ## **🧠 Code Architecture Notes**
 
