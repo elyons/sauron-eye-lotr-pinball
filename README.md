@@ -1,6 +1,7 @@
 # **Sauron's Eye \- LOTR Pinball Mod (ESP32-S3)**
 
 This project runs a looping, artifact-free animation of the Eye of Sauron on a round 1.28" ESP32-S3 display. It is designed to be installed as a visual mod in a *Lord of the Rings* pinball machine.
+* [Link to Waveshare board](https://www.waveshare.com/esp32-s3-lcd-1.28.htm)
 
 ## **🛠 Hardware Configuration**
 
