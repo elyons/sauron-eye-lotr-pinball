@@ -39,11 +39,13 @@ File Location (Linux):
 ```~/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/default.csv```
 
 **Replace contents with:**  
-```# Name,   Type, SubType, Offset,  Size, Flags  
+```
+# Name,   Type, SubType, Offset,  Size, Flags  
 nvs,      data, nvs,     0x9000,  0x5000,  
 otadata,  data, ota,     0xe000,  0x2000,  
 app0,     app,  ota\_0,   0x10000, 0x300000,  
-spiffs,   data, spiffs,  0x310000,0x300000, ```
+spiffs,   data, spiffs,  0x310000,0x300000,
+```
 
 *Sets SPIFFS size to 3MB (0x300000).*
 
