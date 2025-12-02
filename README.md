@@ -87,7 +87,9 @@ ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hq
    * Hold **BOOT**, Click **RST**, Release **BOOT**.  
 5. Run this command in Terminal (using 115200 baud for safety):
 
-```python3 \-m esptool \--chip esp32s3 \--port /dev/ttyACM0 \--baud 115200 write\_flash 0x310000 /tmp/arduino\_build\_YOUR\_BUILD\_ID/sauron-eye-lotr-pinball.spiffs.bin ```
+```
+python3 \-m esptool \--chip esp32s3 \--port /dev/ttyACM0 \--baud 115200 write\_flash 0x310000 /tmp/arduino\_build\_YOUR\_BUILD\_ID/sauron-eye-lotr-pinball.spiffs.bin
+```
 
 ## **🧠 Code Architecture Notes**
 
