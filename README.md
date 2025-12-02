@@ -36,7 +36,9 @@ This project was built on **Ubuntu Linux** using **Arduino IDE 1.8.19**. The bui
 
 To fit the high-quality GIF file, the default 1.4MB partition is too small. You must modify the default partition table in the Arduino hardware folder to allocate 3MB to SPIFFS.  
 File Location (Linux):  
-```~/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/default.csv```
+```
+~/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/default.csv
+```
 
 **Replace contents with:**  
 ```
@@ -53,7 +55,9 @@ spiffs,   data, spiffs,  0x310000,0x300000,
 
 The source video must be processed to reduce noise, center the image, and handle transparency specifically for the ESP32 buffer logic.  
 **Command:**  
-```ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hqdn3d=4:4:6:6,eq=contrast=1.3:brightness=-0.08,fps=20,scale=120:120:flags=lanczos,split\[s0\]\[s1\];\[s0\]palettegen=reserve\_transparent=0\[p\];\[s1\]\[p\]paletteuse=dither=bayer:bayer\_scale=5" \-loop 0 eye.gif ```
+```
+ffmpeg \-i input.mp4 \-ss 00:00:10 \-t 3 \-vf "crop='min(iw,ih)':'min(iw,ih)',hqdn3d=4:4:6:6,eq=contrast=1.3:brightness=-0.08,fps=20,scale=120:120:flags=lanczos,split\[s0\]\[s1\];\[s0\]palettegen=reserve\_transparent=0\[p\];\[s1\]\[p\]paletteuse=dither=bayer:bayer\_scale=5" \-loop 0 eye.gif
+```
 
 * **Crop:** Centers the square.  
 * **Resolution:** 120x120 (Centered via code offset).  
