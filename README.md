@@ -36,7 +36,7 @@ This project was built on **Ubuntu Linux** using **Arduino IDE 1.8.19**. The bui
 
 To fit the high-quality GIF file, the default 1.4MB partition is too small. You must modify the default partition table in the Arduino hardware folder to allocate 3MB to SPIFFS.  
 File Location (Linux):  
-\~/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/default.csv  
+```~/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/default.csv```
 **Replace contents with:**  
 \# Name,   Type, SubType, Offset,  Size, Flags  
 nvs,      data, nvs,     0x9000,  0x5000,  
