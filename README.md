@@ -89,8 +89,12 @@ ffmpeg -i input.mp4 -ss 00:00:10 -t 3 -vf "crop='min(iw,ih)':'min(iw,ih)',hqdn3d
 5. Run this command in Terminal (using 115200 baud for safety):
 
 ```
-python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 --baud 115200 write_flash 0x310000 /tmp/arduino_build_YOUR_BUILD_ID/sauron-eye-lotr-pinball.spiffs.bin
+python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 --baud 115200 write-flash 0x310000 /tmp/arduino_build_YOUR_BUILD_ID/sauron-eye-lotr-pinball.spiffs.bin
 ```
+* **Note:** There are included spiffs files included in ./ESP32-image-file.  You can use those:
+  ```
+  python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 --baud 115200 write_flash 0x310000 sauron-eye-lotr-pinball-120px.spiffs.bin
+  ```
 
 ## **🧠 Code Architecture Notes**
 
