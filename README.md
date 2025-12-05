@@ -112,7 +112,7 @@ python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 --baud 115200 write-flash 
 * **Red Screen:** SPIFFS mount failed. Check partition table csv matches the flash address.  
 * **Black Screen:** Wrong pinout or Flash Mode set to QIO instead of DIO.  
 * **Artifacts/Snow:** SPI frequency too high. Code is set to 20MHz to fix this.
-* **Flash ESP32 device:** To completed erase the ESP32 device run:
+* **Flash ESP32 device:** To completely erase the ESP32 device put the device into BootLoader mode (hold BOOT, click RST, release BOOT) and then run:
   ```
   python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 erase_flash
   ```
