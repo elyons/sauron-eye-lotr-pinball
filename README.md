@@ -103,7 +103,7 @@ python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 erase_flash
 1.  Open `sauron_eye_pinball.ino` in the Arduino IDE.
 2.  Select your board (e.g., "ESP32S3 Dev Module") and configure (specs that worked for me are listed above).
 3.  **Upload** the sketch.
-** *Note: On the very first boot, the ESP32 will hang for ~60 seconds while it formats the new 10.5MB partition. This is normal.* **
+ **Note: On the very first boot, the ESP32 will hang for ~60 seconds while it formats the new 10.5MB partition. This is normal.**
 
 ## Uploading the Animation
 
