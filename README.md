@@ -141,12 +141,12 @@ ffmpeg -i source_video.mp4 \
 
 ## **⚠️ Troubleshooting**
 
-**"Mount Failed" or Long Wait**	First boot requires formatting the 10.5MB partition. Wait 60 seconds.
-**"FILE_MISSING" Loop**	The sketch is running but hasn't received data. Run python3 upload_gif.py.
-**Upload Stalls**	Ensure Arduino Serial Monitor is closed. Check USB cable.
-**Kernel Panic / Crash**	Usually caused by RAM overflow. Ensure frameBuffer is allocated correctly in setup().
-**Screen is Black	If FILE_MISSING is printing to Serial** the upload hasn't happened yet.
-* **Flash ESP32 device:** To completely erase the ESP32 device put the device into BootLoader mode (hold BOOT, click RST, release BOOT) and then run:
+** "Mount Failed" or Long Wait**	First boot requires formatting the 10.5MB partition. Wait 60 seconds.
+** "FILE_MISSING" Loop**	The sketch is running but hasn't received data. Run python3 upload_gif.py.
+** Upload Stalls**	Ensure Arduino Serial Monitor is closed. Check USB cable.
+** Kernel Panic / Crash**	Usually caused by RAM overflow. Ensure frameBuffer is allocated correctly in setup().
+** Screen is Black	If FILE_MISSING is printing to Serial** the upload hasn't happened yet.
+** **Flash ESP32 device:** To completely erase the ESP32 device put the device into BootLoader mode (hold BOOT, click RST, release BOOT) and then run:
   ```
   python3 -m esptool --chip esp32s3 --port /dev/<your ESP device> erase_flash
   ```
