@@ -104,6 +104,27 @@ python3 -m esptool --chip esp32s3 --port /dev/ttyACM0 erase_flash
 2.  Select your board (e.g., "ESP32S3 Dev Module") and configure (specs that worked for me are listed above).
 3.  **Upload** the sketch.
  **Note:** On the very first boot, the ESP32 will hang for ~60 seconds while it formats the new 10.5MB partition. This is normal.
+ You may monitor this using the serial monitor in the Arduino IDE and will see:
+```
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x38 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x4bc
+load:0x403c9700,len:0xbd8
+load:0x403cc700,len:0x2a0c
+entry 0x403c98d0
+E (98) esp_core_dump_flash: No core dump partition found!
+E (98) esp_core_dumpE (171) SPIFFS: mount failed, -10025
+SPIFFS Mounted
+Total Space: 10594961
+FILE_MISSING
+FILE_MISSING
+FILE_MISSING
+FILE_MISSING
+```
+**Note:** The long pause will happen after "SPIFFS: mount failed" and before "SPIFFS Mounted"
 
 ## Uploading the Animation
 
