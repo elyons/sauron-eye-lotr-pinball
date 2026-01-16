@@ -132,9 +132,9 @@ FILE_MISSING
 
 1.  **Prepare the GIF:** Place your `eye.gif` inside a folder named `data` inside the project directory.
 2.  **Close Serial Monitor:** Ensure the Arduino Serial Monitor is CLOSED.
-3.  **Run the Uploader:**
+3.  **Run the Uploader:** from the base director:
     ```bash
-    python3 upload_gif.py
+    python3 ./bin/upload_gif.py
     ```
 ### How the Uploader Works
 1.  **Reset:** The script toggles the DTR pin to reboot the ESP32.
@@ -143,6 +143,7 @@ FILE_MISSING
     * ESP32 acknowledges.
     * **Loop:** ESP32 requests `NEXT` -> PC sends 1024 bytes -> ESP32 writes to Flash.
     * *This prevents buffer overflows common with large files.*
+  **Note:** If you constantly see "...Still waiting for ESP32 (Formatting 10MB FS can take 60s+)..." after you see that "SPIFFS Mounted" in the Arduino IDE serial monitor, press the reset button on the ESP32.  That will usually get the transfer started.
 
 ## Generating the GIF
 
