@@ -136,6 +136,7 @@ FILE_MISSING
     ```bash
     python3 ./bin/upload_gif.py
     ```
+    **Note:** If you constantly see "...Still waiting for ESP32 (Formatting 10MB FS can take 60s+)..." after you see that "SPIFFS Mounted" in the Arduino IDE serial monitor, press the reset button on the ESP32.  That will usually get the transfer started.
 ### How the Uploader Works
 1.  **Reset:** The script toggles the DTR pin to reboot the ESP32.
 2.  **Handshake:** It waits for the ESP32 to send `FILE_MISSING`.
@@ -143,7 +144,6 @@ FILE_MISSING
     * ESP32 acknowledges.
     * **Loop:** ESP32 requests `NEXT` -> PC sends 1024 bytes -> ESP32 writes to Flash.
     * *This prevents buffer overflows common with large files.*
-  **Note:** If you constantly see "...Still waiting for ESP32 (Formatting 10MB FS can take 60s+)..." after you see that "SPIFFS Mounted" in the Arduino IDE serial monitor, press the reset button on the ESP32.  That will usually get the transfer started.
 
 ## Generating the GIF
 
